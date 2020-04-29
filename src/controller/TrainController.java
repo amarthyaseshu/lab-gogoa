@@ -10,10 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Train;
+import services.FareCalculator;
 
-/**
- * Servlet implementation class TrainController
- */
+
+
 @WebServlet("/train")
 public class TrainController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -31,7 +32,7 @@ public class TrainController extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-/*		int numberOfPersons=Integer.parseInt(request.getParameter("persons"));
+	int numberOfPersons=Integer.parseInt(request.getParameter("persons"));
 		String berth=request.getParameter("berth");
 		String date=request.getParameter("to");
 		System.out.println(numberOfPersons);
@@ -55,7 +56,7 @@ public class TrainController extends HttpServlet {
 		}
 		LocalDate start=LocalDate.parse(date);				
 	
-		Train train=new Train(numberOfPersons,rates,berth,start);
+		Train train=new Train(numberOfPersons,berth,rates,start);
 		train.setNoOfPersons(numberOfPersons);
 		train.setRates(rates);
 		train.setBerth(berth);;
@@ -68,6 +69,6 @@ public class TrainController extends HttpServlet {
 		request.setAttribute("trainfare", trainfare);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/trainView.jsp");
 		dispatcher.forward(request, response);
-	*/}
+	}
 
 }
